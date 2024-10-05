@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tinh toan</title>
+<script>
+    function tinhtoan() {
+        let num1 = parseFloat(document.getElementById('num1').value);
+        let num2 = parseFloat(document.getElementById('num2').value);
+        let operator = document.getElementById('operator').value;
+        let result;
+    
+        switch(operator) {
+            case '+':
+                result = num1 + num2;
+                break;
+            case '-':
+                result = num1 - num2;
+                break;
+            case '*':
+                result = num1 * num2;
+                break;
+            case '/':
+                result = num1 / num2;
+                break;
+            default:
+                result = "Invalid operator";
+        }
+    
+        document.getElementById('result').value = result;
+    }
+    </script>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        text-align: center;
+    }
+    .calculator {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        margin: 20px auto;
+        width: 80%;
+        max-width: 600px;
+        border: 1px solid #ccc;
+        padding: 10px;
+        border-radius: 3px;
+    }
+    input[type="number"], select, button {
+        padding: 5px;
+        flex: 1;
+        margin: 5px;
+    }
+    input[type="text"] {
+        flex: 1;
+        margin: 5px;
+    }
+</style>
+</head>
+<body>
+<p>Thực hiện 4 phép tính cộng, trừ, nhân, chia</p>
+<div class="calculator">
+    <input type="number" id="num1">
+    <select id="operator">
+        <option value="+">+</option>
+        <option value="-">-</option>
+        <option value="*">*</option>
+        <option value="/">/</option>
+    </select>
+    <input type="number" id="num2" >
+    <button onclick="tinhtoan()"> = </button>
+    <input type="text" id="result" >
+</div>
+
+
+</body>
+</html>
